@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Login from "./login";
+import Navbar from "./component/Navbar";
+import Menu from "./component/menu";
+import Signup from "./signUp";
+import ProjectList from "./component/projectList";
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [patientData, setPatientData] = useState("");
+  const [isLoading, setLoading] = useState(false);
+
+  if (!isAuthenticated) {
+    return (
+      <Router>
+        <>
+          <Routes>
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/" element={<Login option={setIsAuthenticated} />} />
+          </Routes>
+        </>
+      </Router>
+    );
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Menu />
+        <div className="container">
+          <ProjectList />
+        </div>
+      </div>
+    </Router>
   );
 }
 
