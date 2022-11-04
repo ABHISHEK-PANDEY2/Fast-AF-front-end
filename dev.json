@@ -3,13 +3,21 @@
     {
       "devId": "23456788",
       "username": "abhishek",
-      "creds": {
-        "email": "abhishekpadney@gmail.com",
-        "password": "Opabhishek"
-      },
+      "email": "abhishekpadney@gmail.com",
+      "password": "Opabhishek",
       "apps": [
         {
           "appname": "test1",
+          "lang": "Node.js",
+          "appCreds": {
+            "clientId": "123456678",
+            "clientSecret": "secret"
+          },
+          "users": {},
+          "requests": {}
+        },
+        {
+          "appname": "test2",
           "lang": "Node.js",
           "appCreds": {
             "clientId": "123456678",

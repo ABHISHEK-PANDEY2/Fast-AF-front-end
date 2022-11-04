@@ -6,9 +6,10 @@ import Navbar from "./component/Navbar";
 import Menu from "./component/menu";
 import Signup from "./signUp";
 import ProjectList from "./component/projectList";
+import CreateProject from "./component/createProject";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
   const [patientData, setPatientData] = useState("");
   const [isLoading, setLoading] = useState(false);
 
@@ -31,7 +32,10 @@ function App() {
         <Navbar />
         <Menu />
         <div className="container">
-          <ProjectList />
+          <Routes>
+            <Route path="/createProject" element={<CreateProject />}></Route>
+            <Route path="/" element={<ProjectList />}></Route>
+          </Routes>
         </div>
       </div>
     </Router>

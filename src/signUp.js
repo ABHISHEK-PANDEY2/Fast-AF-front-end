@@ -16,9 +16,7 @@ const Signup = () => {
         <input type="password" name="password" />
         <label htmlFor="">name</label>
         <input type="text" name="name" id="" />
-        <button type="submit" onClick={click}>
-          <a href="http://localhost:3000/">Submit</a>
-        </button>
+        <button type="submit"></button>
       </form>
     </div>
   );
