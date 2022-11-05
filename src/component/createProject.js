@@ -5,9 +5,10 @@ const CreateProject = () => {
   const [appDescription, setappDescription] = useState();
   const [isClicked, setIsClicked] = useState(false);
   const [response, setResponse] = useState();
+  const devId = sessionStorage.getItem("devID");
   async function handleSubmit(e) {
     e.preventDefault();
-    const rawres = await fetch("http://localhost:5000/newProject", {
+    const rawres = await fetch(`http://localhost:5000/newProject/${devId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

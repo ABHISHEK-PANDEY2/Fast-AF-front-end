@@ -9,7 +9,7 @@ import ProjectList from "./component/projectList";
 import CreateProject from "./component/createProject";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [patientData, setPatientData] = useState("");
   const [isLoading, setLoading] = useState(false);
 
@@ -34,6 +34,7 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="/createProject" element={<CreateProject />}></Route>
+            <Route path="/projectList" element={<ProjectList />}></Route>
             <Route path="/" element={<ProjectList />}></Route>
           </Routes>
         </div>

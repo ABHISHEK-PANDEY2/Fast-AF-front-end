@@ -22,10 +22,13 @@ const Login = (props) => {
       }),
     });
     const res = await rawres.json();
-    console.log(res);
+    console.log(res, res.devId);
     if (res.auth === true) {
+      console.log(res.devId);
+      sessionStorage.setItem("devID", res.devId);
       sessionStorage.setItem("token", res.token);
       isAuth(true);
+      sessionStorage.setItem("username", email);
     } else {
       sessionStorage.setItem("token", null);
       isAuth(false);

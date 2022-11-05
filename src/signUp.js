@@ -1,6 +1,6 @@
 const Signup = () => {
   function click() {
-    window.location.href = "http://localhost:3000/";
+    window.location.href = "https://protected-crag-71641.herokuapp.com/";
     console.log("clicked");
   }
   return (
